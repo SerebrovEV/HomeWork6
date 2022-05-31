@@ -6,9 +6,7 @@ public class Main {
         task4();
     }
 
-    int[] arr = generateRandomArray();
-
-    public static int[] generateRandomArray() {
+    private static final int[] generateRandomArray() {
         java.util.Random random = new java.util.Random();
         int[] arr = new int[30];
         for (int i = 0; i < arr.length; i++) {
@@ -17,7 +15,7 @@ public class Main {
         return arr;
     }
 
-    public static void task1() {
+    private static void task1() {
         int summSalary = 0;
         int[] ints = generateRandomArray();
         for (int i = 0; i < ints.length; i++) {
@@ -27,7 +25,7 @@ public class Main {
         System.out.println("Сумма трат за месяц составила " + summSalary + " рублей.");
     }
 
-    public static void task2() {
+    private static void task2() {
         int maxPay = 0;
         int[] ints = generateRandomArray();
         for (int i = 0; i < ints.length; i++) {
@@ -49,7 +47,7 @@ public class Main {
         System.out.println("Максимальная сумма трат за день составила " +  maxPay + " рублей.");
     }
 
-    public static void task3() {
+    private static void task3() {
         int summSalary = 0;
         int[] ints = generateRandomArray();
         for (int i = 0; i < ints.length; i++) {
@@ -60,7 +58,7 @@ public class Main {
         System.out.println("Средняя сумма трат за месяц составила " + mediumPay + " рублей.");
     }
 
-    public static void task4() {
+    private static void task4() {
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         for (int i = reverseFullName.length - 1; i >= 0; i--) {
             System.out.print(reverseFullName[i]);
