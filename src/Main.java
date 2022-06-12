@@ -16,7 +16,7 @@ public class Main {
     private static final int[] generateRandomArray() {
         java.util.Random random = new java.util.Random();
         int[] arr = new int[30];
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i <= arr.length - 1; i++) {
             arr[i] = random.nextInt(100_000) + 100_000;
         }
         return arr;
@@ -25,7 +25,7 @@ public class Main {
     private static void task1() {
         int summSalary = 0;
         int[] ints = generateRandomArray();
-        for (int i = 0; i < ints.length; i++) {
+        for (int i = 0; i <= ints.length - 1; i++) {
             summSalary = summSalary + ints[i];
             // System.out.println(ints[i]);
         }
@@ -124,16 +124,16 @@ public class Main {
 – В консоль выведен результат программы после преобразований массива.
 – Программа выводит корректный результат при смене значений внутри массива. */
         int[] arr = {5, 4, 3, 2, 1};
+        int j = arr.length - 1;
         System.out.println(Arrays.toString(arr));
-        for (int i = arr.length - 1; i >= 0; i--) {
-            if (i == 0) {
-                System.out.print(arr[i] + "]");
-            } else if (i == arr.length - 1) {
-                System.out.print("[" + arr[i] + ", ");
-            } else {
-                System.out.print(arr[i] + ", ");
-            }
+        for (int i = 0; i < 2; i++) {
+            int a = arr[i];
+            int b = arr[j];
+            arr[i] = b;
+            arr[j] = a;
+            j--;
         }
+        System.out.print(Arrays.toString(arr));
         System.out.println();
     }
 
@@ -154,7 +154,7 @@ public class Main {
         System.out.println(Arrays.toString(arr));
         int sum = -2;
         boolean result = false;
-        for (int i = 0; arr[i] < 0 && !result; i++) {
+        for (int i = 0; i <= arr.length - 1 && !result; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] + arr[j] == sum) {
                     System.out.println("Сумма " + arr[i] + " и " + arr[j] + " равна -2");
@@ -175,7 +175,7 @@ public class Main {
         Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));
         int sum = -2;
-        for (int i = 0; arr[i] < 0; i++) {
+        for (int i = 0; i <= arr.length - 1; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] + arr[j] == sum) {
                     System.out.println("Сумма " + arr[i] + " и " + arr[j] + " равна -2");
